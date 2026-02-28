@@ -2,38 +2,92 @@
 <html>
 <head>
     <title>Autonomous Research Intelligence</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="css/base.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/landing.css">
 </head>
 <body>
 
-<div class="background">
-    <div class="orb orb1"></div>
-    <div class="orb orb2"></div>
-    <div class="orb orb3"></div>
-</div>
+<div class="background-glow"></div>
 
-<div class="hero-container">
+<header class="navbar">
+    <div class="logo">ARI</div>
+    <nav>
+        <a href="#problem">Problem</a>
+        <a href="#why">Why Us</a>
+        <a href="#product">Product</a>
+        <a href="#future">Future</a>
+    </nav>
+    <button class="nav-btn">Launch</button>
+</header>
 
-    <div class="glass-card">
+<section class="hero">
+    <h1>
+        Autonomous Intelligence<br>
+        <span>For Strategic Research</span>
+    </h1>
 
-        <h1 class="headline">
-            Autonomous Research Intelligence Engine
-        </h1>
+    <p id="typing-text"></p>
 
-        <p class="subtext" id="typing"></p>
+    <div class="hero-buttons">
+        <button class="primary">Explore Platform</button>
+        <button class="secondary">View Demo</button>
+    </div>
+</section>
 
-        <div class="cta">
-            <a href="dashboard.html" class="btn primary">Start Research</a>
-            <a href="company.html" class="btn secondary">Company Intelligence</a>
+<section class="section" id="problem">
+    <h2>The Research Bottleneck</h2>
+    <p>
+        Strategic decisions rely on structured insight. Yet modern research remains fragmented,
+        inconsistent, and time-intensive to validate.
+    </p>
+</section>
+
+<section class="section" id="why">
+    <h2>Why Autonomous Intelligence</h2>
+
+    <div class="feature-grid">
+        <div class="feature">
+            <h3>Automated Planning</h3>
+            <p>Break complex questions into structured sub-intelligence.</p>
         </div>
 
-    </div>
+        <div class="feature">
+            <h3>Credibility Scoring</h3>
+            <p>Evaluate domain reliability and source diversity.</p>
+        </div>
 
-</div>
+        <div class="feature">
+            <h3>Numerical Analytics</h3>
+            <p>Detect volatility, trends, and confidence levels.</p>
+        </div>
+
+        <div class="feature">
+            <h3>Structured Reports</h3>
+            <p>Generate executive-ready intelligence summaries instantly.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section product" id="product">
+    <h2>Experience the Engine</h2>
+    <div class="demo-box">
+        Product Demo Preview
+    </div>
+</section>
+
+<section class="section" id="future">
+    <h2>Beyond Research</h2>
+    <p>
+        Expand into company intelligence, policy evaluation,
+        financial modeling, and strategic forecasting.
+    </p>
+</section>
+
+<footer class="footer">
+    © 2026 Autonomous Research Intelligence
+</footer>
 
 <script src="js/landing.js"></script>
 </body>

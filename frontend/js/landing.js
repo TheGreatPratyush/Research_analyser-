@@ -1,12 +1,14 @@
-const text = "Transform complex research questions into structured strategic intelligence in minutes.";
+const text = "Transform fragmented information into structured, confidence-scored decision intelligence.";
+const typingElement = document.getElementById("typing-text");
+
 let index = 0;
 
 function typeEffect() {
     if (index < text.length) {
-        document.getElementById("typing").innerHTML += text.charAt(index);
+        typingElement.innerHTML += text.charAt(index);
         index++;
-        setTimeout(typeEffect, 30);
+        setTimeout(typeEffect, 20);
     }
 }
 
-window.onload = typeEffect;
+window.addEventListener("load", typeEffect);
