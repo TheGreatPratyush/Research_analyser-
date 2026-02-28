@@ -1,17 +1,25 @@
-Autonomous Research Intelligence Engine
+🚀 Autonomous Research Intelligence Engine
 
 AI-powered system that automatically decomposes complex strategic research questions into structured, actionable sub-questions for faster and more comprehensive analysis.
 
-1. Problem Statement
+🧩 Problem Statement
 Problem Title
 
 The Research That Takes a Week and Shouldn’t
 
 Problem Description
 
-Researchers spend significant time manually breaking complex strategic questions into smaller, searchable sub-questions. This manual process is inconsistent, slow (2–3 hours per question), and often misses critical research angles due to cognitive bias and the absence of systematic decomposition frameworks.
+Researchers spend significant time manually breaking complex strategic questions into smaller, searchable sub-questions. This manual process is:
 
-Target Users
+Inconsistent
+
+Slow (2–3 hours per question)
+
+Prone to cognitive bias
+
+Lacking systematic decomposition frameworks
+
+🎯 Target Users
 
 Academic Researchers (Students, Professors, PhD Candidates)
 
@@ -21,25 +29,31 @@ Business Strategists (Product Managers, Growth Teams)
 
 Policy Researchers (Government Think Tanks, NGOs)
 
-Existing Gaps
+⚠️ Existing Gaps
 
-No automated question decomposition tools
+❌ No automated question decomposition tools
 
-Manual and time-intensive workflow
+❌ Manual and time-intensive workflow
 
-Inconsistent sub-question quality
+❌ Inconsistent sub-question quality
 
-Missed research dimensions
+❌ Missed research dimensions
 
-Lack of team-wide standardization
+❌ Lack of team-wide standardization
 
-2. Problem Understanding & Approach
+🔍 Problem Understanding & Approach
 Root Cause Analysis
 
 Process Breakdown:
-Complex Question → Manual Breakdown → Inconsistent Sub-questions → Incomplete Research
 
-Root Causes:
+Complex Question 
+    ↓
+Manual Breakdown 
+    ↓
+Inconsistent Sub-questions 
+    ↓
+Incomplete Research
+Root Causes
 
 Human cognitive bias
 
@@ -49,14 +63,11 @@ Time constraints
 
 Lack of automation
 
-Solution Strategy
-
-Develop an AI Planner Module that automatically generates 5–7 optimized, specific, and searchable sub-questions using structured prompting.
-
-3. Proposed Solution
+💡 Proposed Solution
 Solution Overview
 
 Transforms:
+
 “What are the best EV strategies in India?”
 
 Into:
@@ -71,11 +82,11 @@ What infrastructure challenges exist?
 
 What are projected growth trends?
 
-Core Idea
+🧠 Core Idea
 
 LLM-powered question decomposition using structured prompting via API-based inference.
 
-Key Features
+✨ Key Features
 
 Input: Complex research question (string)
 
@@ -87,44 +98,40 @@ Modular Python architecture
 
 Integration-ready with search & scoring modules
 
-4. System Architecture
+🏗️ System Architecture
 High-Level Flow
-
-User → Backend (FastAPI) → Planner Module → Search Module → Scoring Module → Final Report
-
+User 
+  ↓
+Backend (FastAPI)
+  ↓
+Planner Module
+  ↓
+Search Module
+  ↓
+Scoring Module
+  ↓
+Final Structured Report
 Architecture Description
 
 The system follows a modular backend design:
 
-main.py handles user input and orchestration
+main.py → Handles user input and orchestration
 
-planner.py generates structured sub-questions
+planner.py → Generates structured sub-questions
 
-search.py retrieves relevant information
+search.py → Retrieves relevant information
 
-scoring.py ranks and filters results
+scoring.py → Ranks and filters results
 
-Final structured research output is returned
-
-Architecture Diagram
+🖼️ Architecture Diagram
 
 (Add system architecture diagram image here)
 
-[User Input]
-      ↓
-[FastAPI Backend]
-      ↓
-[Planner Module]
-      ↓
-[Search Module]
-      ↓
-[Scoring Module]
-      ↓
-[Structured Research Report]
-5. Database Design
+🗄️ Database Design
 Database Approach
 
-No database used. The system is stateless and operates in real time.
+No database used.
+The system is stateless and operates in real time.
 
 Design Rationale
 
@@ -134,7 +141,7 @@ Simplified architecture
 
 Scalable serverless deployment compatibility
 
-6. Dataset Selected
+📊 Dataset
 Dataset Name
 
 None (Zero-shot inference)
@@ -155,7 +162,7 @@ Fast inference (<1 second per query)
 
 Strong structured output capability
 
-Preprocessing Steps
+🔧 Preprocessing Steps
 
 Structured prompt engineering
 
@@ -165,7 +172,7 @@ Enforcing 5–7 question constraint
 
 Response formatting validation
 
-7. Model Selected
+🤖 Model Selected
 Model Name
 
 API-based LLM (e.g., Gemini 1.5 Flash)
@@ -180,25 +187,29 @@ Reliable structured output
 
 Suitable for real-time decomposition
 
-Alternatives Considered
+🔄 Alternatives Considered
 Model	Pros	Cons
 GPT-4o	High reasoning quality	Expensive
 Claude	Strong reasoning	Less structured output
 Llama3	Open-source	Requires self-hosting
-Evaluation Metrics
+📏 Evaluation Metrics
 
-Completeness (Always 5–7 sub-questions)
+Completeness → Always 5–7 sub-questions
 
-Specificity (Searchable phrasing)
+Specificity → Searchable phrasing
 
-Consistency (Low output variation)
+Consistency → Low output variation
 
-Relevance (Aligned to original query)
+Relevance → Alignment with original query
 
-8. Technology Stack
+🛠️ Technology Stack
 Frontend
 
-HTML, CSS, JavaScript (Minimal UI)
+HTML
+
+CSS
+
+JavaScript
 
 Backend
 
@@ -210,9 +221,10 @@ google-generativeai
 
 python-dotenv
 
-ML/AI
+ML / AI
 
 API-based LLM
+
 Structured Prompt Engineering
 
 Database
@@ -225,19 +237,14 @@ Vercel (Frontend)
 
 Docker (Backend – Planned)
 
-9. API Documentation & Testing
-Endpoint 1
-
+📡 API Documentation
+Endpoint
 POST /generate
-
-Input:
-
+Input
 {
   "query": "EV market strategies in India?"
 }
-
-Output:
-
+Output
 {
   "subquestions": [
     "What is the current market size of EVs in India?",
@@ -248,52 +255,42 @@ Output:
   ]
 }
 
-API tested using Thunder Client / Postman.
+API tested using Thunder Client / Postman
 
-(Add Postman / Thunder Client screenshots here)
+(Add Postman screenshots here)
 
-10. Module-wise Development & Deliverables
-Checkpoint 1: Research & Planning ✅
-
-Deliverables:
+🧱 Module-wise Development & Deliverables
+✅ Checkpoint 1: Research & Planning
 
 Problem definition
 
 Architecture design
 
-Checkpoint 2: Backend Development ✅
-
-Deliverables:
+✅ Checkpoint 2: Backend Development
 
 modules/planner.py
 
-Checkpoint 3: Frontend Development ⏳
-
-Deliverables:
+⏳ Checkpoint 3: Frontend Development
 
 Minimal UI integration
 
-Checkpoint 4: Model Training ☑️ Skipped
+☑️ Checkpoint 4: Model Training (Skipped)
 
 Zero-shot LLM used
 
-Checkpoint 5: Model Integration ✅
-
-Deliverables:
+✅ Checkpoint 5: Model Integration
 
 Planner integrated with API
 
-Checkpoint 6: Deployment ⏳
-
-Deliverables:
+⏳ Checkpoint 6: Deployment
 
 Docker setup (planned)
 
-11. End-to-End Workflow
+🔄 End-to-End Workflow
 
 User enters research question
 
-Planner module generates 5–7 sub-questions
+Planner generates 5–7 sub-questions
 
 Search module retrieves information
 
@@ -301,28 +298,33 @@ Scoring module ranks quality
 
 Structured research output delivered
 
-12. Demo & Video
+🎥 Demo & Repository
 
-Live Demo:
+Run Locally:
+
 python main.py
 
 GitHub Repository:
 https://github.com/TheGreatPratyush/Research_analyser-
 
-13. Hackathon Deliverables Summary
+🏆 Hackathon Deliverables Summary
 
 ✅ AI Planner Module
+
 ✅ Structured Output System
+
 ✅ Modular Backend Architecture
+
 ⏳ Search & Scoring Integration
+
 ⏳ UI Enhancement
 
-14. Team Roles & Responsibilities
+👥 Team Roles & Responsibilities
 Member	Role	Responsibilities
 Shanmukha Sai Chakali	Planner Module	modules/planner.py
 Vishal Kumar Gowda	Search Module	modules/search.py
 Pratyush Gupta	Scoring & Integration	modules/scoring.py
-15. Future Scope & Scalability
+🔮 Future Scope & Scalability
 Short-Term
 
 Sub-question relevance scoring
@@ -339,7 +341,7 @@ Academic database integration
 
 Enterprise SaaS deployment
 
-16. Known Limitations
+⚠️ Known Limitations
 
 API dependency
 
@@ -349,7 +351,7 @@ No offline mode
 
 No persistent storage
 
-17. Impact
+🌍 Impact
 
 Reduces research planning time
 
