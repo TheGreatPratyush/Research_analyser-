@@ -1,18 +1,21 @@
 from typing import List, Dict
 from urllib.parse import urlparse
-import re
+
 
 def analyze_sources(articles: List[Dict]) -> Dict:
     """
     Analyze source credibility and diversity.
-    
+
     Args:
-        articles: List of article dicts with 'url' key
-        
+        articles: List of article dictionaries with 'url' key.
+
     Returns:
-        Credibility analysis dictionary
+        Dictionary containing credibility metrics.
     """
+
     total_sources = len(articles)
+
+    # Handle empty input safely
     if total_sources == 0:
         return {
             "total_sources": 0,
@@ -21,46 +24,50 @@ def analyze_sources(articles: List[Dict]) -> Dict:
             "edu_sources": 0,
             "org_sources": 0,
             "com_sources": 0,
-            "credibility_score": 0.0
+            "credibility_score": 0.0,
+            "diversity_level": "Low"
         }
-    
+
     domains = set()
-    gov_count, edu_count, org_count, com_count = 0, 0, 0, 0
-    
+    gov_count = 0
+    edu_count = 0
+    org_count = 0
+    com_count = 0
+
     for article in articles:
-        url = article.get('url', '')
+        url = article.get("url", "")
         if not url:
             continue
-            
-        # Extract domain
+
         parsed = urlparse(url)
-        domain = parsed.netloc.lower().replace('www.', '')
+        domain = parsed.netloc.lower().replace("www.", "")
         domains.add(domain)
-        
-        # Count TLDs
-        if domain.endswith('.gov'):
+
+        if domain.endswith(".gov"):
             gov_count += 1
-        elif domain.endswith('.edu'):
+        elif domain.endswith(".edu"):
             edu_count += 1
-        elif domain.endswith('.org'):
+        elif domain.endswith(".org"):
             org_count += 1
-        elif domain.endswith('.com'):
+        elif domain.endswith(".com"):
             com_count += 1
-    
+
     unique_domains = len(domains)
-    
-    # Calculate raw credibility score
+
+    # Raw credibility score calculation
     raw_score = (
         gov_count * 3.0 +
         edu_count * 2.0 +
         org_count * 1.5 +
         com_count * 1.0
     )
-    
-    # Normalize to 0-100 scale
-    max_possible = total_sources * 3.0  # Max if all .gov
-    credibility_score = (raw_score / max_possible * 100) if max_possible > 0 else 0.0
-    
+
+    max_possible_score = total_sources * 3.0  # All sources are .gov
+    credibility_score = (
+        (raw_score / max_possible_score) * 100
+        if max_possible_score > 0 else 0.0
+    )
+
     return {
         "total_sources": total_sources,
         "unique_domains": unique_domains,
@@ -68,13 +75,17 @@ def analyze_sources(articles: List[Dict]) -> Dict:
         "edu_sources": edu_count,
         "org_sources": org_count,
         "com_sources": com_count,
-        "credibility_score": round(credibility_score, 2)
+        "credibility_score": round(credibility_score, 2),
+        "diversity_level": get_diversity_rating(unique_domains)
     }
 
+
 def get_diversity_rating(unique_domains: int) -> str:
-    """Helper for diversity rating (for future use)."""
+    """
+    Determine source diversity level.
+    """
     if unique_domains > 3:
         return "High"
-    elif unique_domains >= 2:
+    elif 2 <= unique_domains <= 3:
         return "Moderate"
     return "Low"
