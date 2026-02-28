@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Select Mode</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0b1120;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Subtle background lighting */
+        body::before {
+            content: "";
+            position: absolute;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(59,130,246,0.25) 0%, transparent 70%);
+            top: -300px;
+            left: -200px;
+        }
+
+        body::after {
+            content: "";
+            position: absolute;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(139,92,246,0.25) 0%, transparent 70%);
+            bottom: -300px;
+            right: -200px;
+        }
+
+        .container {
+            text-align: center;
+            z-index: 2;
+            max-width: 700px;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            color: rgba(255,255,255,0.65);
+            margin-bottom: 50px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 16px 36px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.3s ease;
+        }
+
+        .btn-company {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            color: white;
+            box-shadow: 0 10px 30px rgba(139,92,246,0.35);
+        }
+
+        .btn-company:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 18px 45px rgba(139,92,246,0.5);
+        }
+
+        .btn-user {
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            background: transparent;
+        }
+
+        .btn-user:hover {
+            background: rgba(255,255,255,0.08);
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Choose Your Mode</h1>
+    <p>Select how you would like to explore the platform.</p>
+
+    <div class="buttons">
+        <a href="company.html" class="btn btn-company">Explore as a Company</a>
+        <a href="dashboard.html" class="btn btn-user">Explore as a User</a>
+    </div>
+</div>
+
+</body>
+</html>
