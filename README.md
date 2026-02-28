@@ -3,31 +3,31 @@
 AI-powered system that automatically decomposes complex strategic research questions into structured, actionable sub-questions for faster and more comprehensive analysis.
 
 🧩 Problem Statement
-Problem Title
+📌 The Research That Takes a Week — and Shouldn’t
 
-The Research That Takes a Week and Shouldn’t
+Researchers spend significant time manually breaking complex strategic questions into smaller, searchable sub-questions.
 
-Problem Description
+This process is:
 
-Researchers spend significant time manually breaking complex strategic questions into smaller, searchable sub-questions. This manual process is:
+❌ Inconsistent
 
-Inconsistent
+❌ Slow (2–3 hours per question)
 
-Slow (2–3 hours per question)
+❌ Prone to cognitive bias
 
-Prone to cognitive bias
+❌ Lacking structured decomposition frameworks
 
-Lacking systematic decomposition frameworks
+Result → Incomplete or inefficient research.
 
 🎯 Target Users
 
 Academic Researchers (Students, Professors, PhD Candidates)
 
-Market Analysts (Investment Firms, Consulting Companies)
+Market Analysts (Investment Firms, Consulting Firms)
 
 Business Strategists (Product Managers, Growth Teams)
 
-Policy Researchers (Government Think Tanks, NGOs)
+Policy Researchers (Think Tanks, NGOs, Government Bodies)
 
 ⚠️ Existing Gaps
 
@@ -39,40 +39,18 @@ Policy Researchers (Government Think Tanks, NGOs)
 
 ❌ Missed research dimensions
 
-❌ Lack of team-wide standardization
-
-🔍 Problem Understanding & Approach
-Root Cause Analysis
-
-Process Breakdown:
-
-Complex Question 
-    ↓
-Manual Breakdown 
-    ↓
-Inconsistent Sub-questions 
-    ↓
-Incomplete Research
-Root Causes
-
-Human cognitive bias
-
-No structured decomposition framework
-
-Time constraints
-
-Lack of automation
+❌ No team-wide standardization
 
 💡 Proposed Solution
-Solution Overview
+🔍 Example
 
-Transforms:
+Input:
 
 “What are the best EV strategies in India?”
 
-Into:
+Output:
 
-What is the current market size of EVs in India?
+What is the current EV market size in India?
 
 Who are the key competitors?
 
@@ -84,25 +62,33 @@ What are projected growth trends?
 
 🧠 Core Idea
 
-LLM-powered question decomposition using structured prompting via API-based inference.
+LLM-powered question decomposition using structured prompt engineering via API-based inference.
+
+Zero-shot (no training required)
+
+Structured output enforcement
+
+Fast real-time response (< 1 sec)
 
 ✨ Key Features
 
 Input: Complex research question (string)
 
-Output: 5–7 actionable sub-questions (List[str])
+Output: 5–7 structured sub-questions (List[str])
 
-Zero-shot inference (no model training required)
+Zero-shot LLM inference
 
-Modular Python architecture
+Modular backend architecture
 
 Integration-ready with search & scoring modules
 
+Stateless and scalable design
+
 🏗️ System Architecture
 High-Level Flow
-User 
+User
   ↓
-Backend (FastAPI)
+FastAPI Backend
   ↓
 Planner Module
   ↓
@@ -110,74 +96,30 @@ Search Module
   ↓
 Scoring Module
   ↓
-Final Structured Report
-Architecture Description
-
-The system follows a modular backend design:
-
-main.py → Handles user input and orchestration
-
-planner.py → Generates structured sub-questions
-
-search.py → Retrieves relevant information
-
-scoring.py → Ranks and filters results
-
-🖼️ Architecture Diagram
-
-(Add system architecture diagram image here)
-
+Structured Research Report
+Module Breakdown
+File	Responsibility
+main.py	API routing & orchestration
+modules/planner.py	Generates structured sub-questions
+modules/search.py	Retrieves relevant information
+modules/scoring.py	Ranks and filters results
 🗄️ Database Design
-Database Approach
 
 No database used.
-The system is stateless and operates in real time.
 
-Design Rationale
+Stateless system
 
-No persistence required
+Real-time inference
+
+Serverless-compatible
 
 Simplified architecture
 
-Scalable serverless deployment compatibility
+🤖 Model Selection
 
-📊 Dataset
-Dataset Name
+Model Used: API-based LLM (e.g., Gemini 1.5 Flash)
 
-None (Zero-shot inference)
-
-Source
-
-LLM API
-
-Data Type
-
-Pre-trained large-scale language model corpus
-
-Selection Reason
-
-Trained on diverse research and business content
-
-Fast inference (<1 second per query)
-
-Strong structured output capability
-
-🔧 Preprocessing Steps
-
-Structured prompt engineering
-
-Output validation
-
-Enforcing 5–7 question constraint
-
-Response formatting validation
-
-🤖 Model Selected
-Model Name
-
-API-based LLM (e.g., Gemini 1.5 Flash)
-
-Selection Reasoning
+Why?
 
 Low latency
 
@@ -185,22 +127,22 @@ Cost-effective
 
 Reliable structured output
 
-Suitable for real-time decomposition
+Suitable for real-time inference
 
 🔄 Alternatives Considered
 Model	Pros	Cons
 GPT-4o	High reasoning quality	Expensive
 Claude	Strong reasoning	Less structured output
-Llama3	Open-source	Requires self-hosting
+Llama 3	Open-source	Requires self-hosting
 📏 Evaluation Metrics
 
 Completeness → Always 5–7 sub-questions
 
-Specificity → Searchable phrasing
+Specificity → Search-friendly phrasing
 
 Consistency → Low output variation
 
-Relevance → Alignment with original query
+Relevance → Strong alignment with original query
 
 🛠️ Technology Stack
 Frontend
@@ -221,15 +163,11 @@ google-generativeai
 
 python-dotenv
 
-ML / AI
+AI
 
 API-based LLM
 
 Structured Prompt Engineering
-
-Database
-
-None (Stateless Architecture)
 
 Deployment
 
@@ -240,11 +178,11 @@ Docker (Backend – Planned)
 📡 API Documentation
 Endpoint
 POST /generate
-Input
+Request
 {
   "query": "EV market strategies in India?"
 }
-Output
+Response
 {
   "subquestions": [
     "What is the current market size of EVs in India?",
@@ -255,36 +193,7 @@ Output
   ]
 }
 
-API tested using Thunder Client / Postman
-
-(Add Postman screenshots here)
-
-🧱 Module-wise Development & Deliverables
-✅ Checkpoint 1: Research & Planning
-
-Problem definition
-
-Architecture design
-
-✅ Checkpoint 2: Backend Development
-
-modules/planner.py
-
-⏳ Checkpoint 3: Frontend Development
-
-Minimal UI integration
-
-☑️ Checkpoint 4: Model Training (Skipped)
-
-Zero-shot LLM used
-
-✅ Checkpoint 5: Model Integration
-
-Planner integrated with API
-
-⏳ Checkpoint 6: Deployment
-
-Docker setup (planned)
+Tested using Postman / Thunder Client.
 
 🔄 End-to-End Workflow
 
@@ -292,39 +201,32 @@ User enters research question
 
 Planner generates 5–7 sub-questions
 
-Search module retrieves information
+Search module retrieves relevant data
 
-Scoring module ranks quality
+Scoring module ranks results
 
-Structured research output delivered
+Structured research output is delivered
 
-🎥 Demo & Repository
+🧱 Development Progress
 
-Run Locally:
+✅ Research & Architecture Planning
 
-python main.py
+✅ Planner Module
 
-GitHub Repository:
-https://github.com/TheGreatPratyush/Research_analyser-
+⏳ Search Module Integration
 
-🏆 Hackathon Deliverables Summary
+⏳ Scoring Module Integration
 
-✅ AI Planner Module
+⏳ Frontend Enhancement
 
-✅ Structured Output System
+⏳ Docker Deployment
 
-✅ Modular Backend Architecture
-
-⏳ Search & Scoring Integration
-
-⏳ UI Enhancement
-
-👥 Team Roles & Responsibilities
-Member	Role	Responsibilities
-Shanmukha Sai Chakali	Planner Module	modules/planner.py
-Vishal Kumar Gowda	Search Module	modules/search.py
+👥 Team Roles
+Member	Role	Responsibility
+Shanmukha Sai Chakali	Planner	modules/planner.py
+Vishal Kumar Gowda	Search	modules/search.py
 Pratyush Gupta	Scoring & Integration	modules/scoring.py
-🔮 Future Scope & Scalability
+🔮 Future Scope
 Short-Term
 
 Sub-question relevance scoring
@@ -335,7 +237,7 @@ Query caching
 
 Long-Term
 
-Custom fine-tuned research LLM
+Fine-tuned research LLM
 
 Academic database integration
 
@@ -355,7 +257,21 @@ No persistent storage
 
 Reduces research planning time
 
-Improves research completeness
+Improves completeness of analysis
+
+Standardizes research decomposition
+
+Enables scalable autonomous research pipelines
+
+▶️ Run Locally
+git clone https://github.com/TheGreatPratyush/Research_analyser-
+cd Research_analyser-
+pip install -r requirements.txt
+python main.py
+🎥 Repository
+
+GitHub:
+https://github.com/TheGreatPratyush/Research_analyser-
 
 Standardizes decomposition across teams
 
