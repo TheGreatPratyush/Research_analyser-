@@ -1,46 +1,37 @@
 body {
     margin: 0;
     font-family: 'Inter', sans-serif;
-    background: #0f172a;
+    background: #0b1120;
     color: white;
+    overflow-x: hidden;
 }
 
 .btn {
-    padding: 12px 24px;
-    border-radius: 6px;
+    padding: 14px 28px;
+    border-radius: 8px;
     text-decoration: none;
+    font-weight: 600;
+    margin: 10px;
     display: inline-block;
+    transition: all 0.3s ease;
 }
 
 .primary {
-    background: #3b82f6;
+    background: linear-gradient(135deg,#3b82f6,#9333ea);
     color: white;
+    box-shadow: 0 0 20px rgba(59,130,246,0.5);
+}
+
+.primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 40px rgba(147,51,234,0.8);
 }
 
 .secondary {
     border: 1px solid white;
     color: white;
 }
-.hidden {
-    display: none;
-}
 
-button {
-    position: relative;
-    overflow: hidden;
-}
-
-.ripple {
-    position: absolute;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.5);
-    transform: scale(0);
-    animation: ripple-animation 0.6s linear;
-}
-
-@keyframes ripple-animation {
-    to {
-        transform: scale(4);
-        opacity: 0;
-    }
+.secondary:hover {
+    background: rgba(255,255,255,0.1);
 }
