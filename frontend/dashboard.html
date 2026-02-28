@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Research Dashboard</title>
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="layout">
+
+    <div class="sidebar">
+        <h2>AI Intelligence</h2>
+
+        <textarea id="question" placeholder="Enter research question..."></textarea>
+        <button onclick="analyze()">Run Intelligence</button>
+
+        <div class="future">
+            <h4>Platform Scope</h4>
+            <p>• Market Research</p>
+            <p>• Policy Intelligence</p>
+            <p>• Industry Risk Analysis</p>
+        </div>
+    </div>
+
+    <div class="main">
+
+        <div class="metrics">
+            <div class="card">
+                <h3>Confidence</h3>
+                <p id="confidence">--</p>
+            </div>
+
+            <div class="card">
+                <h3>Credibility</h3>
+                <p id="credibility">--</p>
+            </div>
+
+            <div class="card">
+                <h3>Volatility</h3>
+                <p id="volatility">--</p>
+            </div>
+
+            <div class="card">
+                <h3>Trend</h3>
+                <p id="trend">--</p>
+            </div>
+        </div>
+
+        <div class="tabs">
+            <button onclick="showTab('summary')">Summary</button>
+            <button onclick="showTab('analytics')">Analytics</button>
+            <button onclick="showTab('report')">Full Report</button>
+        </div>
+
+        <div id="summary" class="tab"></div>
+
+        <div id="analytics" class="tab hidden">
+            <canvas id="chart"></canvas>
+        </div>
+
+        <div id="report" class="tab hidden"></div>
+
+    </div>
+
+</div>
+
+<script src="js/dashboard.js"></script>
+</body>
+</html>

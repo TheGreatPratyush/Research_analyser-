@@ -1,0 +1,25 @@
+.hero {
+    height: 100vh;
+    background: linear-gradient(135deg,#0f172a,#1e3a8a);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    animation: fadeIn 1.5s ease;
+}
+
+.headline {
+    font-size: 48px;
+    font-weight: 800;
+}
+
+.subtext {
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.buttons {
+    margin-top: 40px;
+}
