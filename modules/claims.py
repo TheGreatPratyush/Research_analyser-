@@ -7,7 +7,7 @@ def extract_claims(article_text: str) -> list:
     if not article_text or not isinstance(article_text, str):
         return []
 
-    api_key = os.getenv("GEMINI_API_KEY")
+    api_key = os.getenv("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")
     if not api_key:
         return []
 
